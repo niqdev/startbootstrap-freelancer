@@ -5,5 +5,8 @@
 /bower_components
 
 # ide
-.idea
+.idea/
 *.iml
+
+# TODO remove directory
+theme/
