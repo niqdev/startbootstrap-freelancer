@@ -1,4 +1,3 @@
-// Generated on 2015-09-16 using generator-angular 0.12.1
 'use strict';
 
 // # Globbing
@@ -36,6 +35,10 @@ module.exports = function (grunt) {
       bower: {
         files: ['bower.json'],
         tasks: ['wiredep']
+      },
+      includeSource: {
+        files: ['<%= yeoman.app %>/index.html'],
+        tasks: ['includeSource:server']
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -207,6 +210,23 @@ module.exports = function (grunt) {
       }
     },
 
+    includeSource: {
+      options: {
+        basePath: 'app',
+        baseUrl: '/',
+      },
+      server: {
+        files: {
+          '.tmp/index.html': '<%= yeoman.app %>/index.html'
+        }
+      },
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
+        }
+      }
+    },
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -252,7 +272,7 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.dist %>/index.html',
       options: {
         dest: '<%= yeoman.dist %>',
         flow: {
@@ -449,6 +469,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'includeSource',
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
@@ -473,6 +494,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'includeSource',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -481,7 +503,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    //'cdnify',
+    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
