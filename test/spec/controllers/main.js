@@ -1,23 +1,27 @@
-'use strict';
+(function () {
+  'use strict';
 
-describe('Controller: MainCtrl', function () {
+  describe('HomeController test', function () {
 
-  // load the controller's module
-  beforeEach(module('startbootstrapFreelancerApp'));
+    beforeEach(module(AppConfig.name));
 
-  var MainCtrl,
-    scope;
+    var $rootScope, $scope, $controller;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
-      $scope: scope
-      // place here mocked dependencies
+    beforeEach(function() {
+      inject(function (_$rootScope_, _$controller_) {
+        $rootScope = _$rootScope_;
+        $scope = $rootScope.$new();
+        $controller = _$controller_;
+      });
+      $controller('HomeController', {
+        $scope: $scope
+      });
     });
-  }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+    it('should init controller', function () {
+      expect($scope.awesomeThings).toEqual('startbootstrap');
+    });
+
   });
-});
+
+})();
