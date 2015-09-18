@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module(AppConfig.name, [])
+  angular.module(AppConfig.getModuleName('home'))
     .controller('HomeController', HomeController);
 
   HomeController.$inject = ['$log', '$scope'];
