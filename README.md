@@ -15,7 +15,9 @@ add:
 
 ```bash
 # setup first time
-wget https://github.com/niqdev/startbootstrap-freelancer/archive/feature/angular.zip && unzip angular.zip && rm angular.zip
+wget -q https://github.com/niqdev/startbootstrap-freelancer/archive/feature/angular.zip \
+  && unzip angular.zip && rm angular.zip
+  
 cd startbootstrap-freelancer-feature-angular
 npm install
 bower install

@@ -3,6 +3,11 @@
 
   AppConfig.setup();
 
+  angular.module(AppConfig.name)
+    .config(['$locationProvider', function ($locationProvider) {
+      $locationProvider.hashPrefix('!');
+    }]);
+
   // TODO compress i18n json
   angular.module(AppConfig.name)
     .config(['$translateProvider', function ($translateProvider) {

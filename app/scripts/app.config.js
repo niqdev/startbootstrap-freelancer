@@ -9,7 +9,8 @@ var AppConfig = (function() {
     'ngCookies',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ui.router'
   ];
 
   var getModuleName = function(name) {
