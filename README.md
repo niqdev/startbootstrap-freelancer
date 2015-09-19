@@ -30,11 +30,15 @@ grunt serve
 grunt test
 ```
 
-# deploy on heroku
+### Config deploy
 heroku login
 heroku create startbootstrap-freelancer-demo
 git push heroku feature/angular:master
 heroku ps:scale web=1
 heroku open
 heroku logs --tail
+
+### Instruction for deploy on heroku
+* uncomment in .gitignore the 'dist' directory
+* change $fa-font-path in app/styles/main.scss
 heroku local web
