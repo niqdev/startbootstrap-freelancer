@@ -14,6 +14,8 @@
       });
 
       $translateProvider.preferredLanguage('en');
+      $translateProvider.usePostCompiling(true);
+      $translateProvider.useSanitizeValueStrategy('sanitize');
     }]);
 
   // manual initialization
