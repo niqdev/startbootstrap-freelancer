@@ -15,30 +15,36 @@ added:
 
 TODO handle with express all unmatched urls
 
+### Setup first time
 ```
-# setup first time
 wget -q https://github.com/niqdev/startbootstrap-freelancer/archive/feature/angular.zip \
   && unzip angular.zip && rm angular.zip
   
 cd startbootstrap-freelancer-feature-angular
 npm install
 bower install
+```
 
-# available task
+### Available tasks
+```
 grunt build
 grunt serve
 grunt test
 ```
 
 ### Config deploy
+```
 heroku login
 heroku create startbootstrap-freelancer-demo
 git push heroku feature/angular:master
 heroku ps:scale web=1
 heroku open
-heroku logs --tail
+heroku logs --tail`
+```
 
 ### Instruction for deploy on heroku
+
 * uncomment in .gitignore the 'dist' directory
 * change $fa-font-path in app/styles/main.scss
-heroku local web
+
+Run `heroku local web`
