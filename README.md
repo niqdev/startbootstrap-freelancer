@@ -1,11 +1,22 @@
 # startbootstrap-freelancer
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+> work in progress
+
+TODO readme
+
+* https://github.com/IronSummitMedia/startbootstrap-freelancer
+* https://github.com/yeoman/generator-angular
+
+add:
+
+* https://github.com/jwvdiermen/grunt-include-source
+* https://github.com/angular-translate/angular-translate
+* https://github.com/angular-ui/ui-router
 
 ```bash
 # setup first time
-wget XXX
+wget https://github.com/niqdev/startbootstrap-freelancer/archive/feature/angular.zip && unzip angular.zip && rm angular.zip
+cd startbootstrap-freelancer-feature-angular
 npm install
 bower install
 
@@ -16,3 +27,6 @@ grunt test
 ```
 
 TODO tests
+
+# deploy on heroku
+TODO
