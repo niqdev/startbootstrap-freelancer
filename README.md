@@ -13,7 +13,9 @@ add:
 * https://github.com/angular-translate/angular-translate
 * https://github.com/angular-ui/ui-router
 
-```bash
+TODO handle with express all unmatched urls
+
+```
 # setup first time
 wget -q https://github.com/niqdev/startbootstrap-freelancer/archive/feature/angular.zip \
   && unzip angular.zip && rm angular.zip
@@ -27,8 +29,3 @@ grunt build
 grunt serve
 grunt test
 ```
-
-# deploy on heroku
-TODO
-
-TODO handle with express all unmatched urls
