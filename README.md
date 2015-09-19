@@ -33,7 +33,8 @@ grunt test
 # deploy on heroku
 heroku login
 heroku create startbootstrap-freelancer-demo
-git push heroku master
+git push heroku feature/angular
 heroku ps:scale web=1
 heroku open
 heroku logs --tail
+heroku local web
