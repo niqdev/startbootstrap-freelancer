@@ -7,7 +7,7 @@ TODO readme
 * https://github.com/IronSummitMedia/startbootstrap-freelancer
 * https://github.com/yeoman/generator-angular
 
-add:
+added:
 
 * https://github.com/jwvdiermen/grunt-include-source
 * https://github.com/angular-translate/angular-translate
@@ -29,3 +29,11 @@ grunt build
 grunt serve
 grunt test
 ```
+
+# deploy on heroku
+heroku login
+heroku create startbootstrap-freelancer-demo
+git push heroku master
+heroku ps:scale web=1
+heroku open
+heroku logs --tail
