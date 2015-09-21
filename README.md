@@ -39,7 +39,7 @@ heroku create startbootstrap-freelancer-demo
 git push heroku feature/angular:master
 heroku ps:scale web=1
 heroku open
-heroku logs --tail`
+heroku logs --tail
 ```
 
 ### Instruction for deploy on heroku
