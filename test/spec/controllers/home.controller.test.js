@@ -19,7 +19,7 @@
     });
 
     it('should init controller', function () {
-      expect($scope.awesomeThings).toEqual('startbootstrap');
+      expect($scope.isOverThreshold).toBeFalsy();
     });
 
   });

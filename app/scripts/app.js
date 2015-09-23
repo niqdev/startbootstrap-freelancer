@@ -23,6 +23,9 @@
       $translateProvider.useSanitizeValueStrategy('sanitize');
     }]);
 
+  // lodash support
+  angular.module(AppConfig.name).constant('_', window._);
+
   // manual initialization
   angular.element(document).ready(function () {
     angular.bootstrap(document, [AppConfig.name]);

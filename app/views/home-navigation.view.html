@@ -1,27 +1,30 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top"
+  nav-animated scroll-threshold="300" ng-model="isOverThreshold"
+  data-ng-class="{'navbar-shrink': isOverThreshold}">
+
   <div class="container">
     <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
+        <span class="sr-only" translate>home.navigation.toggle</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand" href="#page-top" translate>home.navigation.brand</a>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden">
           <a href="#page-top"></a>
         </li>
         <li class="page-scroll">
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio" translate>home.navigation.portfolio</a>
         </li>
         <li class="page-scroll">
-          <a href="#about">About</a>
+          <a href="#about" translate>home.navigation.about</a>
         </li>
         <li class="page-scroll">
-          <a href="#contact">Contact</a>
+          <a href="#contact" translate>home.navigation.contact</a>
         </li>
       </ul>
     </div>

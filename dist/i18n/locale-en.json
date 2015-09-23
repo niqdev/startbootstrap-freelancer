@@ -3,6 +3,12 @@
     "title": "Freelancer - Start Bootstrap Theme"
   },
   "home": {
-    "text": "prova-en"
+    "navigation": {
+      "toggle": "Toggle navigation",
+      "brand": "Start Bootstrap",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "contact": "Contact"
+    }
   }
 }
