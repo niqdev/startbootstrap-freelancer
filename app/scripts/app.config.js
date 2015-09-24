@@ -10,7 +10,8 @@ var AppConfig = (function() {
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'ui.router'
+    'ui.router',
+    'duScroll'
   ];
 
   var getModuleName = function(name) {
