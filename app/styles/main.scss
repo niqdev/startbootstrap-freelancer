@@ -9,5 +9,4 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
 
-@import "/app/styles/freelancer.css";
-//@import "/app/styles/freelancer-custom";
+@import "theme/freelancer";

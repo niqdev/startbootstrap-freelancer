@@ -52,7 +52,10 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: [
+          '<%= yeoman.app %>/styles/theme/{,*/}*.{scss,sass}',
+          '<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'
+        ],
         tasks: ['compass:server', 'autoprefixer:server']
       },
       gruntfile: {
