@@ -7,6 +7,3 @@
 # ide
 .idea/
 *.iml
-
-# TODO remove directory
-theme/

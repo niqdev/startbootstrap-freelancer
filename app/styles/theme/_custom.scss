@@ -1,0 +1,42 @@
+// custom
+
+body {
+  font-size: 15px;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+
+  .navbar-toggle, &:hover, &:focus {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    .icon-bar {
+      background-color: white;
+    }
+  }
+
+  .navbar-collapse {
+    border-color: $brand-primary;
+  }
+
+  a {
+    color: white;
+    padding: 19.5px 15px;
+    text-align: center;
+    &:hover {
+      color: $brand-success;
+    }
+  }
+
+  .navbar-nav > .active {
+    color: white;
+    background: darken($brand-primary, 10%);
+  }
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    color: white;
+    background: darken($brand-primary, 10%);
+  }
+}
