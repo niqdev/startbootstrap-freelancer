@@ -6,7 +6,6 @@
     var $rootScope, $compile, $window, $timeout;
 
     beforeEach(function () {
-      mockI18n();
       mockWindowScroll();
 
       inject(function (_$rootScope_, _$compile_, _$window_, _$timeout_) {
@@ -16,12 +15,6 @@
         $timeout = _$timeout_;
       });
     });
-
-    function mockI18n() {
-      module(AppConfig.name, function ($translateProvider) {
-        $translateProvider.translations('en', {'mock': 'mock'});
-      });
-    }
 
     function mockWindowScroll() {
       $window = {

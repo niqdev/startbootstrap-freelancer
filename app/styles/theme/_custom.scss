@@ -4,13 +4,16 @@ body {
   font-size: 15px;
 }
 
+@mixin bg-bd-color($color) {
+  background-color: $color;
+  border-color: $color;
+}
+
 nav.navbar.navbar-default.navbar-fixed-top {
-  background-color: $brand-primary;
-  border-color: $brand-primary;
+  @include bg-bd-color($brand-primary);
 
   .navbar-toggle, &:hover, &:focus {
-    background-color: $brand-primary;
-    border-color: $brand-primary;
+    @include bg-bd-color($brand-primary);
     .icon-bar {
       background-color: white;
     }
@@ -29,14 +32,15 @@ nav.navbar.navbar-default.navbar-fixed-top {
     }
   }
 
-  .navbar-nav > .active {
+  @mixin active-link {
     color: white;
     background: darken($brand-primary, 10%);
   }
-  .navbar-nav > .active > a,
-  .navbar-nav > .active > a:hover,
-  .navbar-nav > .active > a:focus {
-    color: white;
-    background: darken($brand-primary, 10%);
+
+  .navbar-nav > .active {
+    @include active-link;
+    > a, a:hover, a:focus {
+      @include active-link;
+    }
   }
 }

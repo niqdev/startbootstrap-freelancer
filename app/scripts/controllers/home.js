@@ -4,9 +4,9 @@
   angular.module(AppConfig.getModuleName('home'))
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$log', '$scope'];
+  HomeController.$inject = ['$log', '$scope', '$document'];
 
-  function HomeController($log, $scope) {
+  function HomeController($log, $scope, $document) {
     $scope.isOverThreshold = false;
   }
 
