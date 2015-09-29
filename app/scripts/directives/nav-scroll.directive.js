@@ -59,32 +59,26 @@
     };
 
     var postLink = function (scope, iElement, iAttrs, controller) {
+
       angular.element(iElement.find('.navbar-collapse li a')).on('click', function (event) {
         var target = angular.element(this).attr('href');
         var duration = angular.element(this).attr('duration');
 
         if (!_.isUndefined(target)) {
-          scrollToElementAnimated(target, duration);
+          $document.scrollToElementAnimated($document.find(target),
+            DEFAULT.OFFSET, duration || DEFAULT.DURATION);
+
           collapseNavbarOnSmallDevice();
         }
       });
-    };
 
-    function findElement(selector) {
-      // angular.element(document.querySelector(selector))
-      return $document.find(selector);
-    }
-
-    function scrollToElementAnimated(element, duration) {
-      $document.scrollToElementAnimated(findElement(element), DEFAULT.OFFSET, duration || DEFAULT.DURATION);
-    }
-
-    function collapseNavbarOnSmallDevice() {
-      var navbarToggle = findElement('.navbar-toggle');
-      if (navbarToggle.is(':visible')) {
-        navbarToggle.trigger('click');
+      function collapseNavbarOnSmallDevice() {
+        var navbarToggle = angular.element(iElement.find('.navbar-toggle'));
+        if (navbarToggle.is(':visible')) {
+          navbarToggle.trigger('click');
+        }
       }
-    }
+    };
 
     return {
       restrict: 'A',

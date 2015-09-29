@@ -35,9 +35,9 @@
 
       var getSource = function() {
         return '<nav nav-scroll>' +
-            '<button class="navbar-toggle" />' +
-            '<div class="navbar-collapse">' +
-              '<ul>' +
+            '<button class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"></button>' +
+            '<div class="collapse navbar-collapse">' +
+              '<ul class="nav navbar-nav">' +
                 '<li><a id="link1" href="#target1"></a></li>' +
                 '<li><a id="link2" href="#target2" duration="5000"></a></li>' +
                 '<li><a id="link3"></a></li>' +
@@ -48,28 +48,55 @@
           '</nav>';
       };
 
-      function clickLink(element, id) {
-        angular.element(element.find('#' + id).eq(0)).trigger('click');
+      function triggerClick(element, selector) {
+        angular.element(element.find(selector).eq(0)).trigger('click');
       }
 
-      it('should fail: missing href attribute', function() {
-
-      });
-
-      it('should succeed: scroll but not collapse', function() {
-
-      });
-
-      it('should succeed: scroll and collapse', inject(function() {
-
-        spyOn($document, 'scrollToElementAnimated');
+      it('should succeed: scroll and collapse with default duration', inject(function() {
 
         var element = $compile(angular.element(getSource()))($rootScope.$new());
-        clickLink(element, 'link1');
+        var navbarToggle = angular.element(element.find('.navbar-toggle'));
+
+        spyOn($document, 'scrollToElementAnimated');
+        spyOn(navbarToggle, 'click');
+
+        triggerClick(element, '#link1');
 
         var target = $document.find('#target1');
-        expect($document.scrollToElementAnimated).toHaveBeenCalledWith(target, 30, 2000);
+        var offset = 30;
+        var duration = 2000;
+        expect($document.scrollToElementAnimated).toHaveBeenCalledWith(target, offset, duration);
+
+        /*
+         * TODO test collapse
+         * - on small device: collapse
+         * - on large device: do NOT collapse
+         * - on collapse: verify trigger('click') - toggle class
+         * - on collapse: verify '.navbar-collapse' hasClass('in')
+         */
+        //expect(navbarToggle.click).toHaveBeenCalled();
       }));
+
+      it('should succeed: scroll with duration attribute', function() {
+        spyOn($document, 'scrollToElementAnimated');
+        var element = $compile(angular.element(getSource()))($rootScope.$new());
+
+        triggerClick(element, '#link2');
+
+        var target = $document.find('#target2');
+        var offset = 30;
+        // TODO parseInt
+        var duration = '5000';
+        expect($document.scrollToElementAnimated).toHaveBeenCalledWith(target, offset, duration);
+      });
+
+      it('should fail: missing href attribute', function() {
+        spyOn($document, 'scrollToElementAnimated');
+        var element = $compile(angular.element(getSource()))($rootScope.$new());
+
+        triggerClick(element, '#link3');
+        expect($document.scrollToElementAnimated).not.toHaveBeenCalled();
+      });
 
     });
 
