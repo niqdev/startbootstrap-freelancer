@@ -42,7 +42,8 @@ heroku logs --tail
 
 ### Instruction for deploy on heroku
 
-* uncomment in .gitignore the 'dist' directory
 * change $fa-font-path in app/styles/main.scss
+* run `grunt build`
+* comment in .gitignore the 'dist' directory
 
 Run `heroku local web`
