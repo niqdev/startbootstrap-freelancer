@@ -1,5 +1,9 @@
 // custom
 
+.icon-github:before {
+  content: "\e600";
+}
+
 body {
   font-size: 15px;
 }
@@ -11,6 +15,11 @@ body {
 
 nav.navbar.navbar-default.navbar-fixed-top {
   @include bg-bd-color($brand-primary);
+
+  .navbar-brand {
+    padding-top: 10px;
+    font-size: 2em;
+  }
 
   .navbar-toggle, &:hover, &:focus {
     @include bg-bd-color($brand-primary);
@@ -44,3 +53,12 @@ nav.navbar.navbar-default.navbar-fixed-top {
     }
   }
 }
+@media #{$small-device} {
+  nav.navbar.navbar-default.navbar-fixed-top {
+    .navbar-brand {
+      padding-top: 5px;
+      font-size: 3em;
+    }
+  }
+}
+
