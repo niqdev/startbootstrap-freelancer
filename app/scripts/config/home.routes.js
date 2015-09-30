@@ -31,9 +31,6 @@
           'portfolio@index.home': {
             templateUrl: 'views/home-portfolio.view.html'
           },
-          'portfolio-modals@index.home': {
-            templateUrl: 'views/home-portfolio-modals.view.html'
-          },
           'about@index.home': {
             templateUrl: 'views/home-about.view.html'
           },

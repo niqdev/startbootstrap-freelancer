@@ -2,7 +2,7 @@
 
 > work in progress
 
-AngularJS SPA based on [startbootstrap-freelancer template](https://github.com/IronSummitMedia/startbootstrap-freelancer) starting from [angular generator](https://github.com/yeoman/generator-angular) deployed on Heroku.
+SPA based on [startbootstrap-freelancer template](https://github.com/IronSummitMedia/startbootstrap-freelancer) completely rewritten in AngularJS starting from [angular generator](https://github.com/yeoman/generator-angular)  and deployed on Heroku.
 
 Main improvements:
 * includes sources into HTML files automatically with [grunt-include-source](https://github.com/jwvdiermen/grunt-include-source)
