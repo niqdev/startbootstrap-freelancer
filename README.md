@@ -8,6 +8,7 @@ Main improvements:
 * includes sources into HTML files automatically with [grunt-include-source](https://github.com/jwvdiermen/grunt-include-source)
 * internationalization support with [angular-translate](https://github.com/angular-translate/angular-translate)
 * routing with [AngularUI Router](https://github.com/angular-ui/ui-router)
+* from less to scss
 
 TODO
 
@@ -45,5 +46,6 @@ heroku logs --tail
 * change $fa-font-path in app/styles/main.scss
 * run `grunt build`
 * comment in .gitignore the 'dist' directory
+* run `git push heroku feature/angular:master`
 
 Run `heroku local web`

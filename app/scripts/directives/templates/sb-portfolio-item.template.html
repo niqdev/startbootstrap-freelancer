@@ -1,0 +1,39 @@
+<div>
+  <div class="col-sm-4 portfolio-item">
+    <a ng-href="#{{modalId}}" class="portfolio-link" data-toggle="modal">
+      <div class="caption">
+        <div class="caption-content">
+          <i class="fa fa-search-plus fa-3x"></i>
+        </div>
+      </div>
+      <img data-ng-src="{{imageUrl}}" class="img-responsive" alt="">
+    </a>
+  </div>
+  <div class="portfolio-modal modal fade" id="{{modalId}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr"><div class="rl"></div></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>{{'home.portfolio.item.title' | translate}}</h2>
+              <hr class="star-primary">
+              <img data-ng-src="{{imageUrl}}" class="img-responsive img-centered" alt="">
+              <p translate>home.portfolio.item.description</p>
+              <ul class="list-inline item-details">
+                <li translate>home.portfolio.item.info1</li>
+                <li translate>home.portfolio.item.info2</li>
+                <li translate>home.portfolio.item.info3</li>
+              </ul>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fa fa-times"></i>{{'common.button.close' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

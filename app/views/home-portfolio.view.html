@@ -2,71 +2,17 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2>Portfolio</h2>
+        <h2>{{'home.portfolio.title' | translate}}</h2>
         <hr class="star-primary">
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/cabin.png" class="img-responsive" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/cake.png" class="img-responsive" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/circus.png" class="img-responsive" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/game.png" class="img-responsive" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/safe.png" class="img-responsive" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="images/portfolio/submarine.png" class="img-responsive" alt="">
-        </a>
-      </div>
+      <sb-portfolio-item modal-id="portfolioModal1" image-url="images/portfolio/cabin.png"></sb-portfolio-item>
+      <sb-portfolio-item modal-id="portfolioModal2" image-url="images/portfolio/cake.png"></sb-portfolio-item>
+      <sb-portfolio-item modal-id="portfolioModal3" image-url="images/portfolio/circus.png"></sb-portfolio-item>
+      <sb-portfolio-item modal-id="portfolioModal4" image-url="images/portfolio/game.png"></sb-portfolio-item>
+      <sb-portfolio-item modal-id="portfolioModal5" image-url="images/portfolio/safe.png"></sb-portfolio-item>
+      <sb-portfolio-item modal-id="portfolioModal6" image-url="images/portfolio/submarine.png"></sb-portfolio-item>
     </div>
   </div>
 </section>
