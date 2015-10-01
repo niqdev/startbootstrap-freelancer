@@ -5,7 +5,6 @@
   "home": {
     "navigation": {
       "toggle": "Toggle navigation",
-      "brand": "Start Bootstrap",
       "portfolio": "Portfolio",
       "about": "About",
       "contact": "Contact"
@@ -23,6 +22,12 @@
         "info2": "Date: <strong><a href=\"http://startbootstrap.com\">April 2014</a></strong>",
         "info3": "Service: <strong><a href=\"http://startbootstrap.com\">Web Development</a></strong>"
       }
+    },
+    "about": {
+      "title": "About",
+      "description1": "Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.",
+      "description2": "Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!",
+      "download": "Download Theme"
     }
   },
   "common": {
