@@ -11,7 +11,8 @@ var AppConfig = (function() {
     'ngTouch',
     'pascalprecht.translate',
     'ui.router',
-    'duScroll'
+    'duScroll',
+    'ui.bootstrap.showErrors'
   ];
 
   var getModuleName = function(name) {
