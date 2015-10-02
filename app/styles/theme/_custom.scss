@@ -11,8 +11,8 @@ body {
 
 nav.navbar.navbar-default.navbar-fixed-top {
   @include bg-bd-color($brand-primary);
-  padding-top: 5px;
-  padding-bottom: 5px;
+  //padding-top: 5px;
+  //padding-bottom: 5px;
 
   .navbar-brand {
     padding-top: 10px;
@@ -55,6 +55,10 @@ nav.navbar.navbar-default.navbar-fixed-top {
 .btn {
   padding: 10px 15px;
   border-width: 2px;
+
+  &.btn-lg {
+    padding: 18px 27px;
+  }
 }
 .btn-default {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);

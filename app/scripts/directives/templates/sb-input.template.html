@@ -1,0 +1,9 @@
+<div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group"
+    data-ng-class="{'floating-label-form-group-with-focus': hasFocus, 'floating-label-form-group-with-value': hasValue}">
+    <label>{{label | translate}}</label>
+    <input class="form-control" data-ng-focus="hasFocus=true" data-ng-blur="hasFocus=false"
+      placeholder="{{label | translate}}" type="{{type || 'text'}}" id="{{id || name}}" name="{{name}}"
+      data-ng-change="onChange()" data-ng-model="value">
+  </div>
+</div>
