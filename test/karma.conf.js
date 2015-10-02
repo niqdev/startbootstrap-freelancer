@@ -34,8 +34,17 @@ module.exports = function(config) {
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      "test/spec/**/*.js",
+      // to include template with $templateCache
+      "app/views/**/*.view.html",
+      "app/scripts/directives/templates/**/*.template.html"
     ],
+
+    // to include template with $templateCache
+    preprocessors: {
+      'app/views/**/*.view.html': ['ng-html2js'],
+      'app/scripts/directives/templates/**/*.template.html': ['ng-html2js']
+    },
 
     // list of files / patterns to exclude
     exclude: [
@@ -59,8 +68,16 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      // to include template with $templateCache
+      "karma-ng-html2js-preprocessor"
     ],
+
+    // to include template with $templateCache
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'ngHtml2JsPreprocessor'
+    },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

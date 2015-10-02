@@ -10,6 +10,7 @@
   function sbTitle() {
 
     var compile = function (tElement, tAttrs) {
+      console.log(tAttrs.title);
       if (_.isUndefined(tAttrs.title)) throw new Error('missing attribute title');
       return postLink;
     };
