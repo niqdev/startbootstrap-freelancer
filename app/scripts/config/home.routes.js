@@ -35,7 +35,8 @@
             templateUrl: 'views/home-about.view.html'
           },
           'contact@index.home': {
-            templateUrl: 'views/home-contact.view.html'
+            templateUrl: 'views/home-contact.view.html',
+            controller: 'ContactController'
           },
           'footer@index.home': {
             templateUrl: 'views/home-footer.view.html'
