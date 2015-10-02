@@ -35,6 +35,7 @@
       },
       restrict: 'E',
       replace: true,
+      require: '^form',
       compile: compile,
       scope: {
         value: '=ngModel',
