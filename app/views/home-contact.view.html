@@ -3,21 +3,29 @@
     <sb-title title="home.contact.title"></sb-title>
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <!-- TODO -->
-        <form name="contactForm" novalidate>
-          <sb-text label="home.contact.name" name="contact-name" ng-model="contactModel.name" ng-required></sb-text>
-          <sb-text ng-model="contactModel.email" label="home.contact.email" name="contact-email"></sb-text>
-          <sb-text ng-model="contactModel.phone" label="home.contact.phone" name="contact-phone"></sb-text>
-          <sb-text ng-model="contactModel.message" label="home.contact.message" name="contact-message" rows="5"></sb-text>
+        <form name="contactForm" data-ng-submit="btnSend()" novalidate>
+
+          <sb-input label="home.contact.name" name="contact-name" ng-model="contactModel.name"
+             min-length="3" max-length="10"></sb-input>
+
+          <sb-input label="home.contact.email" name="contact-email" type="email"
+             ng-model="contactModel.email" ng-required="true"></sb-input>
+
+          <sb-input label="home.contact.phone" name="contact-phone"
+             ng-model="contactModel.phone" pattern="^\d+$"></sb-input>
+
+          <sb-textarea label="home.contact.message" name="contact-message"
+             ng-model="contactModel.message" ng-required="true"></sb-textarea>
+
           <br>
           <div class="row">
             <div class="form-group col-xs-12">
-              <button type="button" class="btn btn-success btn-lg"
-                data-ng-click="btnSendContact()" translate>common.button.send</button>
+              <button type="submit" class="btn btn-success btn-lg" translate>common.button.send</button>
               <button type="button" class="btn btn-default btn-lg"
-                data-ng-click="btnCancelContact()" translate>common.button.cancel</button>
+                data-ng-click="btnCancel()" translate>common.button.cancel</button>
             </div>
           </div>
+          <!--<pre>{{contactForm | json}}</pre>-->
         </form>
       </div>
     </div>

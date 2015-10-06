@@ -7,12 +7,15 @@
   ContactController.$inject = ['$log', '$scope'];
 
   function ContactController($log, $scope) {
-    $scope.btnSendContact = function() {
-      $log.debug('SEND');
+    $scope.btnSend = function() {
+      $scope.$broadcast('show-errors-check-validity');
+      $log.debug('SEND: ' + $scope.contactForm.$valid);
     };
-    $scope.btnCancelContact = function() {
+    $scope.btnCancel = function() {
       $log.debug('CANCEL');
     };
+
+    $scope.emailDisabled = true;
   }
 
 })();

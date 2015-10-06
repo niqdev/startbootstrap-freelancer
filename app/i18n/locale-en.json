@@ -34,7 +34,12 @@
       "name": "Name",
       "email": "Email Address",
       "phone": "Phone Number",
-      "message": "Message"
+      "message": "Message",
+      "validation": {
+        "required": "TODO required",
+        "": "TODO max-length",
+        "pattern-number": "TODO pattern only number"
+      }
     }
   },
   "common": {
@@ -42,6 +47,13 @@
       "close": "Close",
       "send": "Send",
       "cancel": "Cancel"
+    },
+    "validation": {
+      "required": "Mandatory field",
+      "min-length": "Minimum length is {{value}}",
+      "max-length": "Maximum length is {{value}}",
+      "pattern": "Invalid pattern: {{value}}",
+      "email": "Invalid email format"
     }
   }
 }

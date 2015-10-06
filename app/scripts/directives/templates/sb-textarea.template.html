@@ -1,9 +1,14 @@
-<div class="row control-group">
+<div class="row">
   <div class="form-group col-xs-12 floating-label-form-group" show-errors
-    data-ng-class="{'floating-label-form-group-with-focus': hasFocus, 'floating-label-form-group-with-value': hasValue}">
-    <label>{{label | translate}}</label>
+    data-ng-class="{'floating-label-form-group-with-focus': hasFocus, 'floating-label-form-group-with-value': sbInput.$dirty}">
+    <label class="control-label" for="ta-{{id || name}}">
+      <span data-ng-if="sbInput.$valid">{{label | translate}}</span>
+      <span data-ng-messages="sbInput.$error" class="label-danger">
+        <span data-ng-message="required">{{ 'common.validation.required' | translate }}</span>
+      </span>
+    </label>
     <textarea class="form-control" data-ng-focus="hasFocus=true" data-ng-blur="hasFocus=false"
-      placeholder="{{label | translate}}" id="{{id || name}}" name="{{name}}" rows="{{rows}}"
-      data-ng-change="onChange()" data-ng-model="value"></textarea>
+      data-ng-required="required" data-ng-disabled="disabled" rows="_rows" data-ng-model="value"
+      placeholder="{{label | translate}}" id="ta-{{id || name}}" name="{{name}}"></textarea>
   </div>
 </div>

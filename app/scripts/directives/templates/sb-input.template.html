@@ -1,9 +1,19 @@
-<div class="row control-group">
+<div class="row">
   <div class="form-group col-xs-12 floating-label-form-group" show-errors
-    data-ng-class="{'floating-label-form-group-with-focus': hasFocus, 'floating-label-form-group-with-value': hasValue}">
-    <label>{{label | translate}}</label>
+    data-ng-class="{'floating-label-form-group-with-focus': hasFocus, 'floating-label-form-group-with-value': sbInput.$dirty}">
+    <label class="control-label" for="i-{{id || name}}">
+      <span data-ng-if="sbInput.$valid">{{label | translate}}</span>
+      <span data-ng-messages="sbInput.$error" class="label-danger">
+        <span data-ng-message="required">{{ 'common.validation.required' | translate }}</span>
+        <span data-ng-message="minlength">{{ 'common.validation.min-length' | translate:{ value: _minLength } }}</span>
+        <span data-ng-message="maxlength">{{ 'common.validation.max-length' | translate:{ value: _maxLength } }}</span>
+        <span data-ng-message="pattern">{{ 'common.validation.pattern' | translate:{ value: pattern } }}</span>
+        <span data-ng-message="email">{{ 'common.validation.email' | translate }}</span>
+      </span>
+    </label>
     <input class="form-control" data-ng-focus="hasFocus=true" data-ng-blur="hasFocus=false"
-      placeholder="{{label | translate}}" type="{{type || 'text'}}" id="{{id || name}}" name="{{name}}"
-      data-ng-change="onChange()" data-ng-model="value">
+      data-ng-required="required" data-ng-minlength="_minLength" data-ng-maxlength="_maxLength"
+      data-ng-pattern="pattern" data-ng-disabled="disabled" data-ng-model="value"
+      placeholder="{{label | translate}}" type="{{type || 'text'}}" id="i-{{id || name}}" name="{{name}}">
   </div>
 </div>

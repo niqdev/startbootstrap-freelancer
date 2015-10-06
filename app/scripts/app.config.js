@@ -7,6 +7,7 @@ var AppConfig = (function() {
   var vendorsDependencies = [
     'ngAria',
     'ngCookies',
+    'ngMessages',
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',

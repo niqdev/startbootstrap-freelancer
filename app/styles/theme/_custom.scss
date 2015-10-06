@@ -67,6 +67,13 @@ nav.navbar.navbar-default.navbar-fixed-top {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
+.form-group {
+  .label-danger {
+    background-color: white;
+    color: $brand-danger;
+  }
+}
+
 @media #{$small-device} {
   nav.navbar.navbar-default.navbar-fixed-top {
     .navbar-brand {

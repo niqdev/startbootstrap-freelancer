@@ -2,13 +2,14 @@
   'use strict';
 
   angular.module(AppConfig.getModuleName('home'))
-    .directive('sbInput', sbInput);
+    .directive('sbTextarea', sbTextarea);
 
-  sbInput.$inject = ['$log', '_'];
+  sbTextarea.$inject = ['$log', '_'];
 
-  var TEMPLATE_INPUT = 'scripts/directives/templates/sb-input.template.html';
+  var TEMPLATE_TEXTAREA = 'scripts/directives/templates/sb-textarea.template.html';
+  var ROWS_DEFAULT = 5;
 
-  function sbInput($log, _) {
+  function sbTextarea($log, _) {
 
     var compile = function (tElement, tAttrs) {
       if (_.isUndefined(tAttrs.ngModel)) throw new Error('missing attribute ng-model');
@@ -18,20 +19,17 @@
     };
 
     var postLink = function (scope, iElement, iAttrs, controller) {
-      scope._minLength = parseLength(iAttrs.minLength);
-      scope._maxLength = parseLength(iAttrs.maxLength);
+      scope._rows = parseRows(iAttrs);
       scope.sbInput = controller[scope.name];
     };
 
-    function parseLength(value) {
-      var parsed = _.parseInt(value);
-      return _.isNumber(parsed) ? parsed : -1;
+    function parseRows(attrs) {
+      var rows = _.parseInt(attrs.rows);
+      return _.isNumber(rows) ? rows : ROWS_DEFAULT;
     }
 
     return {
-      templateUrl: function(elem, attrs) {
-        return TEMPLATE_INPUT;
-      },
+      templateUrl: TEMPLATE_TEXTAREA,
       restrict: 'E',
       replace: true,
       require: '^form',
@@ -41,14 +39,10 @@
         label: '@',
         name: '@',
         // optional
+        rows: '@',
         id: '@',
-        type: '@',
         disabled: '=ngDisabled',
-        // validation
-        required: '=ngRequired',
-        minLength: '@',
-        maxLength: '@',
-        pattern: '@'
+        required: '=ngRequired'
       }
     };
   }
