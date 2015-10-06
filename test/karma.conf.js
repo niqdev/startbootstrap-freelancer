@@ -21,6 +21,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-aria/angular-aria.js',
       'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-scroll/angular-scroll.js',
       'bower_components/angular-touch/angular-touch.js',
@@ -29,8 +30,6 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
       'bower_components/lodash/lodash.js',
-      'bower_components/angular-bootstrap-show-errors/src/showErrors.js',
-      'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

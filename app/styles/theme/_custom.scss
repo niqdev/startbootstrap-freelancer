@@ -74,6 +74,28 @@ nav.navbar.navbar-default.navbar-fixed-top {
   }
 }
 
+//form.ng-invalid.ng-submitted:not(.ng-dirty) {
+//  [placeholder] {
+//    @include placeholder($brand-danger);
+//  }
+//}
+
+
+form {
+  &.ng-invalid.ng-submitted:not(.ng-dirty) {
+    [placeholder] {
+      @include placeholder($brand-danger);
+    }
+  }
+  &.show-invalid-fields {
+    .ng-invalid {
+      [placeholder] {
+        @include placeholder($brand-danger);
+      }
+    }
+  }
+}
+
 @media #{$small-device} {
   nav.navbar.navbar-default.navbar-fixed-top {
     .navbar-brand {

@@ -9,6 +9,7 @@
   var TEMPLATE_TEXTAREA = 'scripts/directives/templates/sb-textarea.template.html';
   var ROWS_DEFAULT = 5;
 
+  // TODO test
   function sbTextarea($log, _) {
 
     var compile = function (tElement, tAttrs) {

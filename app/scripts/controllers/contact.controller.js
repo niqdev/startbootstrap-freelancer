@@ -6,16 +6,33 @@
 
   ContactController.$inject = ['$log', '$scope'];
 
+  // TODO test
   function ContactController($log, $scope) {
-    $scope.btnSend = function() {
-      $scope.$broadcast('show-errors-check-validity');
-      $log.debug('SEND: ' + $scope.contactForm.$valid);
+
+    var emptyContactModel = {
+      name: null,
+      email: null,
+      phone: null,
+      message: null
     };
-    $scope.btnCancel = function() {
-      $log.debug('CANCEL');
+    $scope.showInvalidFields = false;
+
+    $scope.btnSend = function() {
+      if ($scope.contactForm.$valid) {
+        $log.debug('SEND');
+      } else {
+        $log.debug('INVALID');
+        $scope.showInvalidFields = true;
+      }
     };
 
-    $scope.emailDisabled = true;
+    $scope.btnCancel = function() {
+      $scope.showInvalidFields = false;
+      $scope.contactForm.$setPristine();
+      //$scope.contactForm.$setValidity();
+      $scope.contactModel = angular.copy(emptyContactModel);
+    };
+
   }
 
 })();

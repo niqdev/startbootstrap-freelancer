@@ -3,7 +3,8 @@
     <sb-title title="home.contact.title"></sb-title>
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <form name="contactForm" data-ng-submit="btnSend()" novalidate>
+        <form name="contactForm" data-ng-submit="btnSend()" novalidate
+          data-ng-class="{'show-invalid-fields': showInvalidFields}">
 
           <sb-input label="home.contact.name" name="contact-name" ng-model="contactModel.name"
              min-length="3" max-length="10"></sb-input>
@@ -12,7 +13,7 @@
              ng-model="contactModel.email" ng-required="true"></sb-input>
 
           <sb-input label="home.contact.phone" name="contact-phone"
-             ng-model="contactModel.phone" pattern="^\d+$"></sb-input>
+             ng-model="contactModel.phone" pattern="^\d{6,8}$"></sb-input>
 
           <sb-textarea label="home.contact.message" name="contact-message"
              ng-model="contactModel.message" ng-required="true"></sb-textarea>
@@ -26,6 +27,7 @@
             </div>
           </div>
           <!--<pre>{{contactForm | json}}</pre>-->
+          <!--<pre>{{contactModel | json}}</pre>-->
         </form>
       </div>
     </div>
