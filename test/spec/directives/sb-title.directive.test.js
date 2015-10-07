@@ -43,8 +43,8 @@
       expect(element.find('h2').text()).toEqual(TITLE);
 
       expect(element.find('hr').length).toBe(1);
-      expect(element.find('hr').hasClass(THEME.DEFAULT)).toBe(true);
-      expect(element.find('hr').hasClass(THEME.LIGHT)).toBe(false);
+      expect(element.find('hr').hasClass(THEME.DEFAULT)).toBeTrue();
+      expect(element.find('hr').hasClass(THEME.LIGHT)).toBeFalse();
     });
 
     it('should succeed: has theme light', function () {
@@ -59,8 +59,8 @@
       expect(element.find('h2').text()).toEqual(TITLE);
 
       expect(element.find('hr').length).toBe(1);
-      expect(element.find('hr').hasClass(THEME.DEFAULT)).toBe(false);
-      expect(element.find('hr').hasClass(THEME.LIGHT)).toBe(true);
+      expect(element.find('hr').hasClass(THEME.DEFAULT)).toBeFalse();
+      expect(element.find('hr').hasClass(THEME.LIGHT)).toBeTrue();
     });
 
   });

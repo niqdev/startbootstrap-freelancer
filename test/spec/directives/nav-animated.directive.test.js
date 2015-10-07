@@ -73,8 +73,8 @@
         var element = $compile(angular.element(getSource()))($scope);
         scrollWindow();
 
-        expect($scope.isOverThreshold).toBe(false);
-        expect(element.hasClass('my-class')).toBeFalsy();
+        expect($scope.isOverThreshold).toBeFalse();
+        expect(element.hasClass('my-class')).toBeFalse();
       });
 
       it('should succeed: more than threshold', function() {
@@ -85,8 +85,8 @@
         var element = $compile(angular.element(getSource()))($scope);
         scrollWindow();
 
-        expect($scope.isOverThreshold).toBe(true);
-        expect(element.hasClass('my-class')).toBeTruthy();
+        expect($scope.isOverThreshold).toBeTrue();
+        expect(element.hasClass('my-class')).toBeTrue();
       });
 
     });
