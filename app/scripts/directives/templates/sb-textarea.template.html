@@ -8,7 +8,7 @@
       </span>
     </label>
     <textarea class="form-control" data-ng-focus="hasFocus=true" data-ng-blur="hasFocus=false"
-      data-ng-required="required" data-ng-disabled="disabled" rows="_rows" data-ng-model="value"
+      data-ng-required="required" rows="{{_rows}}" data-ng-model="value"
       placeholder="{{label | translate}}" id="ta-{{id || name}}" name="{{name}}"></textarea>
   </div>
 </div>

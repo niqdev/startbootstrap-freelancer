@@ -9,7 +9,6 @@
   var TEMPLATE_TEXTAREA = 'scripts/directives/templates/sb-textarea.template.html';
   var ROWS_DEFAULT = 5;
 
-  // TODO test
   function sbTextarea($log, _) {
 
     var compile = function (tElement, tAttrs) {
@@ -26,7 +25,7 @@
 
     function parseRows(attrs) {
       var rows = _.parseInt(attrs.rows);
-      return _.isNumber(rows) ? rows : ROWS_DEFAULT;
+      return _.isNaN(rows) ? ROWS_DEFAULT : rows;
     }
 
     return {
@@ -42,7 +41,6 @@
         // optional
         rows: '@',
         id: '@',
-        disabled: '=ngDisabled',
         required: '=ngRequired'
       }
     };
