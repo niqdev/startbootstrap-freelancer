@@ -19,6 +19,16 @@
       return element;
     }
 
+    var expectFormToBeValid = function() {
+      expect($scope.myForm.$valid).toBeTrue();
+    };
+    var expectFormToBeInvalid = function() {
+      expect($scope.myForm.$invalid).toBeTrue();
+    };
+    var setInputValue = function(value) {
+      $scope.myForm.myName.$setViewValue(value);
+    };
+
     describe('verify compilation:', function () {
 
       function expectToThrow(source) {
@@ -51,7 +61,7 @@
         return sbInput;
       }
 
-      it('should verify name WITHOUT id attribute', function () {
+      it('should verify name without id attribute', function () {
         var source = '<sb-input ng-model="myModel" label="myLabel" name="myName"></sb-input>';
         var sbInput = findInput(source);
 
@@ -59,7 +69,7 @@
         expect(sbInput.id).toEqual('i-myName');
       });
 
-      it('should verify name WITH id attribute', function () {
+      it('should verify name with id attribute', function () {
         var source = '<sb-input ng-model="myModel" label="myLabel" name="myName" id="myId"></sb-input>';
         var sbInput = findInput(source);
 
@@ -153,12 +163,6 @@
         var element =  compileDirective(source);
         return angular.element(element.find('label')[0]);
       };
-      var expectFormToBeValid = function() {
-        expect($scope.myForm.$valid).toBeTrue();
-      };
-      var expectFormToBeInvalid = function() {
-        expect($scope.myForm.$invalid).toBeTrue();
-      };
       var expectLabelToBe = function(label, value) {
         expect(label.text().trim()).toBe(value);
       };
@@ -166,10 +170,6 @@
         expectLabelToBe(label, 'myLabel');
         expectFormToBeValid();
       };
-      var setInputValue = function(value) {
-        $scope.myForm.myName.$setViewValue(value);
-      };
-
 
       it('should verify valid label', function () {
         var source = '<sb-input ng-model="myModel" label="myLabel" name="myName"></sb-input>';
@@ -252,22 +252,70 @@
 
     });
 
-    describe('verify validation attribute:', function () {
+    describe('verify validation attributes:', function () {
+
+      var expectInputToBeValid = function() {
+        expect($scope.myForm.myName.$error).toEqual({});
+        expectFormToBeValid();
+      };
 
       it('should verify required attribute', function () {
+        var source = '<sb-input ng-model="myModel" label="myLabel" name="myName" ng-required="true"></sb-input>';
+        compileDirective(source);
 
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.required).toBeTrue();
+
+        setInputValue('required-text');
+
+        expectInputToBeValid();
       });
 
       it('should verify minlength attribute', function () {
+        var source = '<sb-input ng-model="myModel" label="myLabel" name="myName" min-length="3"></sb-input>';
+        compileDirective(source);
 
+        setInputValue('XY');
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.minlength).toBeTrue();
+
+        setInputValue('XYZ');
+        expectInputToBeValid();
       });
 
       it('should verify maxlength attribute', function () {
+        var source = '<sb-input ng-model="myModel" label="myLabel" name="myName" max-length="3"></sb-input>';
+        compileDirective(source);
 
+        setInputValue('XYZW');
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.maxlength).toBeTrue();
+
+        setInputValue('XYZ');
+        expectInputToBeValid();
       });
 
       it('should verify pattern attribute', function () {
+        var source = '<sb-input ng-model="myModel" label="myLabel" name="myName" pattern="^\\d{2,3}$"></sb-input>';
+        compileDirective(source);
 
+        setInputValue('XYZ');
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.pattern).toBeTrue();
+
+        setInputValue('1');
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.pattern).toBeTrue();
+
+        setInputValue('12');
+        expectInputToBeValid();
+
+        setInputValue('123');
+        expectInputToBeValid();
+
+        setInputValue('1234');
+        expectFormToBeInvalid();
+        expect($scope.myForm.myName.$error.pattern).toBeTrue();
       });
 
     });

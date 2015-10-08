@@ -8,7 +8,6 @@
 
   var TEMPLATE_INPUT = 'scripts/directives/templates/sb-input.template.html';
 
-  // TODO test
   function sbInput($log, _) {
 
     var compile = function (tElement, tAttrs) {
