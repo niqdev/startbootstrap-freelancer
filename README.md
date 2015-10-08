@@ -26,9 +26,6 @@ heroku local web
 ```
 
 TODO
-* test sb-input
-* test sb-textarea
-* test contact-controller
 * fix style contact-form (padding + color + font)
 * fix style scroll-top only mobile
 * service with promise + test

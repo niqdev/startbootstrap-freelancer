@@ -1,9 +1,7 @@
 (function () {
   'use strict';
 
-  describe('HomeController test', function () {
-
-    beforeEach(module(AppConfig.name));
+  describe('HomeController test:', function () {
 
     var $rootScope, $scope, $controller;
 
@@ -19,7 +17,7 @@
     });
 
     it('should init controller', function () {
-      expect($scope.isOverThreshold).toBeFalsy();
+      expect($scope.isOverThreshold).toBeFalse();
     });
 
   });

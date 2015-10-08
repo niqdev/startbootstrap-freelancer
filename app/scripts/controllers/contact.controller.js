@@ -6,10 +6,9 @@
 
   ContactController.$inject = ['$log', '$scope'];
 
-  // TODO test
   function ContactController($log, $scope) {
 
-    var emptyContactModel = {
+    var CONTACT_MODEL = {
       name: null,
       email: null,
       phone: null,
@@ -18,6 +17,8 @@
     $scope.showInvalidFields = false;
 
     $scope.btnSend = function() {
+      $scope.showInvalidFields = false;
+
       if ($scope.contactForm.$valid) {
         $log.debug('SEND');
       } else {
@@ -30,7 +31,7 @@
       $scope.showInvalidFields = false;
       $scope.contactForm.$setPristine();
       //$scope.contactForm.$setValidity();
-      $scope.contactModel = angular.copy(emptyContactModel);
+      $scope.contactModel = angular.copy(CONTACT_MODEL);
     };
 
   }
