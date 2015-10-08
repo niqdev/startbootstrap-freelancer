@@ -40,6 +40,14 @@
         "": "TODO max-length",
         "pattern-number": "TODO pattern only number"
       }
+    },
+    "footer": {
+      "location": "Location",
+      "address": "3481 Melrose Place<br>Beverly Hills, CA 90210",
+      "web": "Around the Web",
+      "about": "About Freelance",
+      "open-source": "Freelance is a free to use, open source Bootstrap theme created by <a href=\"http://startbootstrap.com\">Start Bootstrap</a>.",
+      "copyright": "Copyright &copy; Your Website 2014"
     }
   },
   "common": {

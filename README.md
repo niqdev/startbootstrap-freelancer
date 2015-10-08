@@ -31,5 +31,4 @@ TODO
 * service with promise + test
 * i18n multilanguage (nav + home-controller)
 * map-template
-* footer-template
 * pag 404
