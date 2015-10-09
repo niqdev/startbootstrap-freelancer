@@ -1,0 +1,68 @@
+{
+  "index": {
+    "title": "Freelancer - Start Bootstrap Theme"
+  },
+  "home": {
+    "navigation": {
+      "toggle": "Toggle navigation",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "header": {
+      "name": "Start Bootstrap",
+      "skills": "Web Developer - Graphic Artist - User Experience Designer"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "item": {
+        "title": "Project Title",
+        "description": "Use this area of the page to describe your project. The icon above is part of a free icon set by <a href=\"https://sellfy.com/p/8Q9P/jV3VZ/\">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!",
+        "info1": "Client: <strong><a href=\"http://startbootstrap.com\">Start Bootstrap</a></strong>",
+        "info2": "Date: <strong><a href=\"http://startbootstrap.com\">April 2014</a></strong>",
+        "info3": "Service: <strong><a href=\"http://startbootstrap.com\">Web Development</a></strong>"
+      }
+    },
+    "about": {
+      "title": "About",
+      "description1": "Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.",
+      "description2": "Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!",
+      "download": "Download Theme"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "name": "Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "validation": {
+        "required": "TODO required",
+        "": "TODO max-length",
+        "pattern-number": "TODO pattern only number"
+      }
+    },
+    "footer": {
+      "location": "Location",
+      "address": "3481 Melrose Place<br>Beverly Hills, CA 90210",
+      "web": "Around the Web",
+      "about": "About Freelance",
+      "open-source": "Freelance is a free to use, open source Bootstrap theme created by <a href=\"http://startbootstrap.com\">Start Bootstrap</a>.",
+      "copyright": "Copyright &copy; Your Website 2014"
+    }
+  },
+  "common": {
+    "button": {
+      "close": "Close",
+      "send": "Send",
+      "cancel": "Cancel",
+      "wait": "Wait"
+    },
+    "validation": {
+      "required": "Mandatory field",
+      "min-length": "Minimum length is {{value}}",
+      "max-length": "Maximum length is {{value}}",
+      "pattern": "Invalid pattern: {{value}}",
+      "email": "Invalid email format"
+    }
+  }
+}

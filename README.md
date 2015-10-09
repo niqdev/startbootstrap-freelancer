@@ -28,7 +28,6 @@ heroku local web
 TODO
 * fix style contact-form (padding + color + font)
 * fix style scroll-top only mobile
-* service with promise + test
 * i18n multilanguage (nav + home-controller)
 * map-template
 * pag 404

@@ -8,4 +8,4 @@
 *.iml
 
 # comment this to deploy on heroku
-/dist
+#/dist
