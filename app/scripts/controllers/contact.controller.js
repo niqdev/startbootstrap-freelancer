@@ -4,35 +4,51 @@
   angular.module(AppConfig.getModuleName('home'))
     .controller('ContactController', ContactController);
 
-  ContactController.$inject = ['$log', '$scope'];
+  ContactController.$inject = ['$log', '$scope', 'homeService'];
 
-  function ContactController($log, $scope) {
+  function ContactController($log, $scope, homeService) {
 
-    var CONTACT_MODEL = {
-      name: null,
-      email: null,
-      phone: null,
-      message: null
-    };
-    $scope.showInvalidFields = false;
+    resetContact();
 
     $scope.btnSend = function() {
-      $scope.showInvalidFields = false;
+      $scope.contactView.showInvalidFields = false;
 
       if ($scope.contactForm.$valid) {
-        $log.debug('SEND');
+        $scope.contactView.isBtnSendDisabled = true;
+
+        homeService.sendMessage($scope.contactModel).then(
+          function(response) {
+            $log.debug('SEND_MESSAGE: ' + JSON.stringify(response));
+            clearForm();
+          },
+          function(reason) {
+            $log.error('SEND_MESSAGE: ' + JSON.stringify(reason));
+          }
+        );
+
       } else {
-        $log.debug('INVALID');
-        $scope.showInvalidFields = true;
+        $log.error('INVALID');
+        $scope.contactView.showInvalidFields = true;
+        $scope.contactView.isBtnSendDisabled = false;
       }
     };
 
     $scope.btnCancel = function() {
-      $scope.showInvalidFields = false;
-      $scope.contactForm.$setPristine();
-      //$scope.contactForm.$setValidity();
-      $scope.contactModel = angular.copy(CONTACT_MODEL);
+      clearForm();
     };
+
+    function resetContact() {
+      $scope.contactModel = {};
+      $scope.contactView = {
+        showInvalidFields: false,
+        isBtnSendDisabled: false
+      };
+    }
+
+    function clearForm() {
+      resetContact();
+      $scope.contactForm.$setPristine();
+    }
 
   }
 

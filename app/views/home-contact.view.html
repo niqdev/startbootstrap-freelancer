@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <form name="contactForm" data-ng-submit="btnSend()" novalidate
-          data-ng-class="{'show-invalid-fields': showInvalidFields}">
+          data-ng-class="{'show-invalid-fields': contactView.showInvalidFields}">
 
           <sb-input label="home.contact.name" name="contact-name" ng-model="contactModel.name"
              min-length="3" max-length="10"></sb-input>
@@ -21,13 +21,17 @@
           <br>
           <div class="row">
             <div class="form-group col-xs-12">
-              <button type="submit" class="btn btn-success btn-lg" translate>common.button.send</button>
+              <button type="submit" class="btn btn-success btn-lg"
+                data-ng-disabled="contactView.isBtnSendDisabled">
+                <span data-ng-hide="contactView.isBtnSendDisabled">{{ 'common.button.send' | translate }}</span>
+                <span data-ng-show="contactView.isBtnSendDisabled">{{ 'common.button.wait' | translate }}</span>
+              </button>
               <button type="button" class="btn btn-default btn-lg"
                 data-ng-click="btnCancel()" translate>common.button.cancel</button>
             </div>
           </div>
-          <!--<pre>{{contactForm | json}}</pre>-->
           <!--<pre>{{contactModel | json}}</pre>-->
+          <!--<pre>{{contactForm | json}}</pre>-->
         </form>
       </div>
     </div>

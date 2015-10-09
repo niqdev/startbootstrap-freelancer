@@ -54,7 +54,8 @@
     "button": {
       "close": "Close",
       "send": "Send",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "wait": "Wait"
     },
     "validation": {
       "required": "Mandatory field",
