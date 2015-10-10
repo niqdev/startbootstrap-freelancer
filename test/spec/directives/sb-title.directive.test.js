@@ -3,7 +3,7 @@
 
   describe('Directive sbTitle:', function () {
 
-    var TEMPLATE = 'scripts/directives/templates/sb-title.template.html';
+    var TEMPLATE = 'templates/sb-title.template.html';
     var THEME = {
       DEFAULT: 'star-primary',
       LIGHT: 'star-light'

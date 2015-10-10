@@ -216,7 +216,7 @@ module.exports = function (grunt) {
     includeSource: {
       options: {
         basePath: 'app',
-        baseUrl: '/',
+        baseUrl: '/'
       },
       server: {
         files: {
@@ -379,7 +379,7 @@ module.exports = function (grunt) {
           usemin: 'scripts/scripts.js'
         },
         cwd: '<%= yeoman.app %>',
-        src: 'views/{,*/}*.html',
+        src: ['views/{,*/}*.html', 'templates/{,*/}*.html'],
         dest: '.tmp/templateCache.js'
       }
     },
@@ -510,7 +510,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    //'cdnify',
+    'cdnify',
     'cssmin',
     'uglify',
     'filerev',

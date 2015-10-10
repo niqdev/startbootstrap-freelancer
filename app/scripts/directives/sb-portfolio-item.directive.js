@@ -8,7 +8,7 @@
 
   function sbPortfolioItem() {
     return {
-      templateUrl: 'scripts/directives/templates/sb-portfolio-item.template.html',
+      templateUrl: 'templates/sb-portfolio-item.template.html',
       restrict: 'E',
       replace: true,
       scope: {

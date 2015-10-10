@@ -6,7 +6,6 @@
 
   sbTextarea.$inject = ['$log', '_'];
 
-  var TEMPLATE_TEXTAREA = 'scripts/directives/templates/sb-textarea.template.html';
   var ROWS_DEFAULT = 5;
 
   function sbTextarea($log, _) {
@@ -29,7 +28,7 @@
     }
 
     return {
-      templateUrl: TEMPLATE_TEXTAREA,
+      templateUrl: 'templates/sb-textarea.template.html',
       restrict: 'E',
       replace: true,
       require: '^form',

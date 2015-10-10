@@ -6,7 +6,7 @@
 
   sbInput.$inject = ['$log', '_'];
 
-  var TEMPLATE_INPUT = 'scripts/directives/templates/sb-input.template.html';
+  var TEMPLATE = 'templates/sb-input.template.html';
 
   function sbInput($log, _) {
 
@@ -30,7 +30,7 @@
 
     return {
       templateUrl: function(elem, attrs) {
-        return TEMPLATE_INPUT;
+        return TEMPLATE;
       },
       restrict: 'E',
       replace: true,

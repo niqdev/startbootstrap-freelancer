@@ -36,17 +36,16 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
       'test/spec/**/*.js',
       // to include template with $templateCache
       'app/views/**/*.view.html',
-      'app/scripts/directives/templates/**/*.template.html'
+      'app/templates/**/*.template.html'
     ],
 
     // to include template with $templateCache
     preprocessors: {
       'app/views/**/*.view.html': ['ng-html2js'],
-      'app/scripts/directives/templates/**/*.template.html': ['ng-html2js']
+      'app/templates/**/*.template.html': ['ng-html2js']
     },
 
     // list of files / patterns to exclude

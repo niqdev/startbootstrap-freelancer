@@ -18,7 +18,7 @@
     };
 
     return {
-      templateUrl: 'scripts/directives/templates/sb-title.template.html',
+      templateUrl: 'templates/sb-title.template.html',
       restrict: 'E',
       replace: true,
       compile: compile,
