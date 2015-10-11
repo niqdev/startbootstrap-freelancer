@@ -1,5 +1,28 @@
 {
   "home": {
-    "text": "prova-it"
+    "header": {
+      "name": "Start Bootstrap - IT"
+    },
+    "contact": {
+      "title": "Contattami",
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefono",
+      "message": "Messaggio"
+    }
+  },
+  "common": {
+    "button": {
+      "send": "Invia",
+      "cancel": "Annula",
+      "wait": "Attendi"
+    },
+    "validation": {
+      "required": "Campo obbligatorio",
+      "min-length": "Lunghezza minima: {{value}}",
+      "max-length": "Lunghezza massima: {{value}}",
+      "pattern": "Pattern non valido: {{value}}",
+      "email": "Formato email non valido"
+    }
   }
 }

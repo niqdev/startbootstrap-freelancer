@@ -4,12 +4,16 @@
   angular.module(AppConfig.getModuleName('home'))
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$log', '$scope'];
+  HomeController.$inject = ['$log', '$scope', '$translate', 'homeConstant'];
 
-  function HomeController($log, $scope) {
+  function HomeController($log, $scope, $translate, CONSTANT) {
+    $scope.LANGUAGE = CONSTANT.LANGUAGE;
     $scope.isOverThreshold = false;
 
-    // TODO change i18n
+    $scope.changeLanguage = function (langKey) {
+      $translate.fallbackLanguage(CONSTANT.LANGUAGE.ENGLISH);
+      $translate.use(langKey);
+    };
   }
 
 })();

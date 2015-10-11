@@ -1,16 +1,16 @@
 {
-  "index": {
-    "title": "Freelancer - Start Bootstrap Theme"
-  },
   "home": {
     "navigation": {
       "toggle": "Toggle navigation",
       "portfolio": "Portfolio",
       "about": "About",
-      "contact": "Contact"
+      "contact": "Contact",
+      "language": "Language",
+      "lang-en": "EN",
+      "lang-it": "IT"
     },
     "header": {
-      "name": "Start Bootstrap",
+      "name": "Start Bootstrap - EN",
       "skills": "Web Developer - Graphic Artist - User Experience Designer"
     },
     "portfolio": {
@@ -34,12 +34,7 @@
       "name": "Name",
       "email": "Email Address",
       "phone": "Phone Number",
-      "message": "Message",
-      "validation": {
-        "required": "TODO required",
-        "": "TODO max-length",
-        "pattern-number": "TODO pattern only number"
-      }
+      "message": "Message"
     },
     "footer": {
       "location": "Location",

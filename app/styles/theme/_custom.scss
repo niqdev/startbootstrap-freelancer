@@ -11,8 +11,6 @@ body {
 
 nav.navbar.navbar-default.navbar-fixed-top {
   @include bg-bd-color($brand-primary);
-  //padding-top: 5px;
-  //padding-bottom: 5px;
 
   .navbar-brand {
     padding-top: 10px;
@@ -32,7 +30,6 @@ nav.navbar.navbar-default.navbar-fixed-top {
 
   a {
     color: white;
-    padding: 19.5px 15px;
     text-align: center;
     &:hover {
       color: $brand-success;
@@ -48,6 +45,19 @@ nav.navbar.navbar-default.navbar-fixed-top {
     @include active-link;
     > a, a:hover, a:focus {
       @include active-link;
+    }
+  }
+
+  .dropdown {
+    &.open > a {
+      @include active-link;
+    }
+    li > a {
+      font-weight: 700;
+      color: white;
+      &:hover {
+        color: $brand-success;
+      }
     }
   }
 }
@@ -93,6 +103,19 @@ form {
     .navbar-brand {
       padding-top: 5px;
       font-size: 3em;
+    }
+    a {
+      padding: 19.5px 15px;
+    }
+
+    .dropdown {
+      li > a {
+        color: $brand-success;
+        &:hover {
+          color: darken($brand-primary, 10%);
+          background-color: white;
+        }
+      }
     }
   }
 }
