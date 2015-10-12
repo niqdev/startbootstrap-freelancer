@@ -12,7 +12,8 @@ var AppConfig = (function() {
     'ngTouch',
     'pascalprecht.translate',
     'ui.router',
-    'duScroll'
+    'duScroll',
+    'uiGmapgoogle-maps'
   ];
 
   var getModuleName = function(name) {

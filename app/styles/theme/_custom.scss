@@ -119,6 +119,12 @@ form {
   }
 }
 
+.page-error {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
 @media #{$small-device} {
   nav.navbar.navbar-default.navbar-fixed-top {
     .navbar-brand {
