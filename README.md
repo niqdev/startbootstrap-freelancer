@@ -30,6 +30,5 @@ heroku logs --tail
 ```
 
 TODO
-* fix style contact-form (padding + color + font)
 * map-template
 * pag 404

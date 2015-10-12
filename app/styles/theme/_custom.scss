@@ -108,6 +108,14 @@ form {
       background-color: white;
       color: $brand-danger;
     }
+    &.floating-label-form-group {
+      padding-bottom: 1em;
+    }
+  }
+  .form-control {
+    min-height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -119,6 +127,10 @@ form {
     }
     a {
       padding: 19.5px 15px;
+    }
+
+    ul {
+      font-size: 1.1em;
     }
 
     .dropdown {
