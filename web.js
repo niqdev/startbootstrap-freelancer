@@ -9,8 +9,8 @@ app.use(express.static(__dirname + '/dist'));
 
 // redirect requests that don't start with '/#!/'
 app.get(/^(?!\/#!\/)/, function(req, res) {
-  console.error('error 404: ' + req.url);
-  res.redirect('/#!/404');
+  console.error('ERROR: ' + req.url);
+  res.redirect('/#!/error');
 });
 
 app.listen(process.env.PORT || 5000);

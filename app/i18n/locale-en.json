@@ -59,5 +59,9 @@
       "pattern": "Invalid pattern: {{value}}",
       "email": "Invalid email format"
     }
+  },
+  "error": {
+    "title": "Oops!",
+    "message": "Sorry, something weird happened&#8230;"
   }
 }

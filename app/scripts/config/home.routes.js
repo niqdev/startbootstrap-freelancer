@@ -8,7 +8,7 @@
   function HomeRoute($stateProvider, $urlRouterProvider) {
     $urlRouterProvider
       .when('', '/')
-      .otherwise('/404');
+      .otherwise('/error');
 
     $stateProvider
       .state('index', {
@@ -43,9 +43,9 @@
           }
         }
       })
-      .state('index.not-found', {
-        url: '/404',
-        templateUrl: 'views/404.view.html'
+      .state('error', {
+        url: '/error',
+        templateUrl: 'views/error.view.html'
       });
   }
 
