@@ -58,7 +58,7 @@
 
     function initMap() {
       // milan
-      $scope.map = {center: {latitude: 45.4848157, longitude: 9.2009804}, zoom: 8};
+      $scope.map = {center: {latitude: 45.4848157, longitude: 9.2009804}, zoom: 16};
       $scope.mapOptions = {scrollwheel: false};
 
       uiGmapGoogleMapApi.then(function (maps) {
