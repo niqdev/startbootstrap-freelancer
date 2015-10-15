@@ -4,9 +4,9 @@
   angular.module(AppConfig.getModuleName('home'))
     .controller('ContactController', ContactController);
 
-  ContactController.$inject = ['$log', '$scope', 'homeService'];
+  ContactController.$inject = ['$log', '$scope', 'homeService', 'uiGmapGoogleMapApi'];
 
-  function ContactController($log, $scope, homeService) {
+  function ContactController($log, $scope, homeService, uiGmapGoogleMapApi) {
 
     resetContact();
     initButtons();
@@ -57,7 +57,13 @@
     }
 
     function initMap() {
-      $scope.map = {center: {latitude: 45, longitude: -73}, zoom: 8};
+      // milan
+      $scope.map = {center: {latitude: 45.4848157, longitude: 9.2009804}, zoom: 8};
+      $scope.mapOptions = {scrollwheel: false};
+
+      uiGmapGoogleMapApi.then(function (maps) {
+        $log.debug('map is ready');
+      });
     }
 
   }

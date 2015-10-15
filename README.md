@@ -8,7 +8,7 @@ npm install
 bower install
 ```
 
-To use Google Maps you need to create `/env/config-common.json` configuration file and add your api key.
+To use Google Maps you need to create `/env/config-common.json` [configuration file](/env/config-common_EXAMPLE.json) and add your api key.
 
 ### Tasks
 ```

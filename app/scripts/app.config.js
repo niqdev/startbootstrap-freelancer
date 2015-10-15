@@ -34,7 +34,7 @@ var AppConfig = (function() {
     angular.module(appName, vendorsDependencies);
 
     // ADD MODULES HERE
-    registerModule('home', []);
+    registerModule('home', ['uiGmapgoogle-maps']);
     registerModule('environmentConfig', []);
   };
 

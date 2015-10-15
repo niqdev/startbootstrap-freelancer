@@ -9,7 +9,7 @@
 
 # constant module dinamically generated
 /app/scripts/config/environment.config.js
-#/env/config-common.json
+/env/config-common.json
 
 # comment this to deploy on heroku
 /dist
