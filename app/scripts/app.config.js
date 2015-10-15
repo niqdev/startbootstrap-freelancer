@@ -4,6 +4,7 @@ var AppConfig = (function() {
 
   var appName = 'startbootstrapFreelancerApp';
 
+  // ADD LIBRARIES HERE
   var vendorsDependencies = [
     'ngAria',
     'ngCookies',
@@ -31,8 +32,10 @@ var AppConfig = (function() {
   var setup = function() {
     // define main module and add dependencies
     angular.module(appName, vendorsDependencies);
-    // add app modules
+
+    // ADD MODULES HERE
     registerModule('home', []);
+    registerModule('environmentConfig', []);
   };
 
   return {

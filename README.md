@@ -1,7 +1,5 @@
 # startbootstrap-freelancer
 
-> work in progress
-
 Single Page Application based on [startbootstrap-freelancer template](https://github.com/IronSummitMedia/startbootstrap-freelancer) completely rewritten in AngularJS starting from [angular generator](https://github.com/yeoman/generator-angular) and deployed on Heroku.
 
 ### Setup
@@ -10,11 +8,13 @@ npm install
 bower install
 ```
 
+To use Google Maps you need to create `/env/config-common.json` configuration file and add your api key.
+
 ### Tasks
 ```
+grunt test
 grunt build
 grunt serve
-grunt test
 ```
 
 ### First deploy
@@ -28,7 +28,3 @@ heroku open
 heroku local web
 heroku logs --tail
 ```
-
-TODO
-* map-template
-* pag 404

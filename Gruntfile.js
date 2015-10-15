@@ -15,7 +15,8 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-google-cdn',
+    ngconstant: 'grunt-ng-constant'
   });
 
   // Configurable paths for the application
@@ -70,6 +71,41 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+    // dynamic generation of angular constant modules
+    ngconstant: {
+      // options for all targets
+      options: {
+        // module name
+        name: 'startbootstrapFreelancerApp.environmentConfig',
+        dest: '<%= yeoman.app %>/scripts/config/environment.config.js',
+        constants: {
+          config: {
+            // example constant from file
+            common: grunt.file.readJSON('env/config-common.json'),
+            // example constant inline
+            debug: true
+          }
+        }
+      },
+      dev: {
+        constants: {
+          config: {
+            env: grunt.file.readJSON('env/config-dev.json'),
+            name: 'DEV'
+          }
+        }
+      },
+      prod: {
+        constants: {
+          config: {
+            env: grunt.file.readJSON('env/config-prod.json'),
+            name: 'PROD',
+            debug: false
+          }
+        }
       }
     },
 
@@ -476,6 +512,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'ngconstant:dev',
       'includeSource',
       'wiredep',
       'concurrent:server',
@@ -492,6 +529,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'ngconstant:dev',
     'wiredep',
     'concurrent:test',
     'autoprefixer',
@@ -501,6 +539,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ngconstant:prod',
     'includeSource',
     'wiredep',
     'useminPrepare',

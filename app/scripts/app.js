@@ -8,7 +8,6 @@
       $locationProvider.hashPrefix('!');
     }]);
 
-  // TODO compress i18n json
   angular.module(AppConfig.name)
     .config(['$translateProvider', function ($translateProvider) {
       $translateProvider.useStaticFilesLoader({
@@ -21,6 +20,17 @@
       $translateProvider.preferredLanguage('en');
       $translateProvider.usePostCompiling(true);
       $translateProvider.useSanitizeValueStrategy('sanitize');
+    }]);
+
+  angular.module(AppConfig.name)
+    .config(['uiGmapGoogleMapApiProvider', 'config',
+        function (uiGmapGoogleMapApiProvider, CONFIG) {
+
+      uiGmapGoogleMapApiProvider.configure({
+        key: CONFIG.common.googleMapsApiKey,
+        v: '3.20',
+        libraries: 'weather,geometry,visualization'
+      });
     }]);
 
   // lodash support
